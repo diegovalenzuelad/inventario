@@ -9,12 +9,12 @@ class Funcionario extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['nombre', 'ap_paterno', 'ap_materno', 'unidad_id'];
+    protected $fillable = ['nombre', 'ap_paterno', 'ap_materno', 'unidades_id'];
 
     
-    public function Unidad(){
+    public function unidades(){
 
-        return $this->belongsTo(Unidade::class);
+        return $this->belongsTo(Unidade::class, 'unidades_id');
     }
     public function computadores(){
         return $this->hasMany(Computador::class);

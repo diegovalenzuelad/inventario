@@ -15,8 +15,7 @@ return new class extends Migration
             $table->id();
             $table->String('nombre');
             $table->String('ap_paterno');
-            $table->String('ap_materno');
-            
+            $table->String('ap_materno');            
             $table->foreignId('unidades_id')->nullable()->constrained('unidades')->onUpdate('cascade')->onDelete('set null');            
             $table->timestamps();
         });
